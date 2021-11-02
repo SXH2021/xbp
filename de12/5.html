@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <title>デザイン演習第5回：Python&Game</title>
+</head>
+
+<body>
+    <h1>１．PyChramの日本語化の方法</h1><br>
+        <img src="images/1.png"width="30%" />
+        <h3>file→ settingsを選択</h3><br><br>
+        <img src="images/2.png"width="80%" />
+        <h3>plugins→ marketplaceを選択、「日本語」を入力します。installed→ OK</h3><br><br>
+        <img src="images/3.png"width="50%" />
+        <h3>「再起動してもよろしいですか？」→restart　しばらく待つとソフトが再起動して、日本語の画面になりました。<br>（中国語の場合は「Chinese」を検索しましょう。）</h3>
+    <h1>２．Pythonによる作ったゲーム</h1>
+    　　<h3>ルール：　　コンピュータと自分の数字を比べて、大きかった方が勝ち。ただし、二つの数字の差が30以上あいてる場合は数字が小さい方が勝ち。</h3>
+    <h2>実行の画面</h2>　　
+     <img src="images/4.png"width="30%" />
+     <h2>コード</h2>
+     
+<h3>for i in range(1,20):</h3>
+<h3>print(i,"回目")</h3>
+<br>
+<h3>player=int(input("あなたの数字は？（1~100）:"))</h3>
+<br>
+<h3>import random</h3>
+<h3>a = random.randint(1, 100)</h3>
+<h3>print(a)</h3>
+<br>
+<h3>if player>a and player-a<=30:</h3>
+<h3>    print("あなたの勝です！おめでとうございます！")</h3>
+<h3>elif player＜a and a-player> 30:</h3>
+<h3>    print("あなたの勝です！おめでとうございます！")</h3>
+<h3>else:</h3>
+<h3>    print("残念です！コンピュータの勝です！")</h3>　　　
+<br>
+<h1>感想</h1>
+<h3>　グループワークでゲームのルールを決まる過程はすごく面白かったです。元々自分が考えたルールを説明するのが難しく、他人のルールを理解するのもそんなに簡単ではないからですね。でも最後にルールをきちんと決め、このゲームを作りました（拍手）。一番好きなところはゲームをテストする時です。ゲームとしての面白さを感じました。</h3>
+<br>
+<br>
+<br>
+    <br>
+    <h3>ホームページに戻る</h3> 
+    <ol>
+    <li><a href="index.html" target="_bland">デザイン演習Ⅰ・Ⅱトップページ</a></li>
+       <li><a href="../index.html" target="_bland">XBPトップページ</a></li>
+      </ol>
+<hr>
+<br>
+<br>
+　
+    </body>
