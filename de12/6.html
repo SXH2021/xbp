@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <title>デザイン演習第6回：Python&Program</title>
+</head>
+<h1>時間になると猫の顔文字と猫の声が出てくるアラーム</h1>
+
+<code>
+    <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+    <li style="background-color:#EFF;">import pygame.mixer</li>
+    <li style="background-color:#EEF;">import schedule</li>
+    <li style="background-color:#EFF;">import time</li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;"></li>
+    <li style="background-color:#EEF;">#アラーム処理</li>
+    <li style="background-color:#EFF;">def Alarm():</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;print("時間です")</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;import miao</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;miao.Meow()</li>
+    <li style="background-color:#EFF;"></li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;Sound()</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;exit()   #これがないと無限ループになるので注意</li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;">#音再生処理</li>
+    <li style="background-color:#EEF;">def Sound():</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;pygame.mixer.init() #初期化</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;pygame.mixer.music.load('cat.mp3') #読み込み</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;pygame.mixer.music.play(-1) #ループ再生（引数を1にすると1回のみ再生）</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;input()</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;pygame.mixer.music.stop() #終了</li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;"></li>
+    <li style="background-color:#EEF;">#目覚まし設定時間取得</li>
+    <li style="background-color:#EFF;">print("目覚ましをセットする時間を指定してください")</li>
+    <li style="background-color:#EEF;">hour = input("時間（hour）：")</li>
+    <li style="background-color:#EFF;">minute = input("分（minute）：")</li>
+    <li style="background-color:#EEF;">target = f"{hour.zfill(2)}:{minute.zfill(2)}"</li>
+    <li style="background-color:#EFF;">print(target+"にアラームをセットしました")</li>
+    <li style="background-color:#EEF;"></li>
+    <li style="background-color:#EFF;">#アラーム時間設定</li>
+    <li style="background-color:#EEF;">schedule.every().day.at(target).do(Alarm)</li>
+    <li style="background-color:#EFF;"></li>
+    <li style="background-color:#EEF;">#アラーム待ち</li>
+    <li style="background-color:#EFF;">while True:</li>
+    <li style="background-color:#EEF;">&nbsp;&nbsp;&nbsp;&nbsp;schedule.run_pending()</li>
+    <li style="background-color:#EFF;">&nbsp;&nbsp;&nbsp;&nbsp;time.sleep(1)</li>
+    </ol></code>
+
+    <h2>実行の画面</h2>　　
+     <img src="images/neko.png"width="60%" />
+
+
+<ol><h2>参考リンク</h2>
+    <li><a href="https://pypi.org/project/miao/" target="_bland">猫の顔文字の外部ライブラリ</a></li>
+    <li><a href="https://qiita.com/Rxxx/items/d1f7d9a08dacf693b0a9" target="_bland">アラームのソースコード</a></li>
+    <li><a href="https://taira-komori.jpn.org/animals01.html" target="_bland">猫の声（cat1a.mp3）</a></li> 
+</ol>
+<br>
+<br>
+<ol><h3>ホームページに戻る:</h3>
+    <li><a href="index.html" target="_bland">デザイン演習Ⅰ・Ⅱトップページ</a></li>
+    <li><a href="../index.html" target="_bland">XBPトップページ</a></li>
+   </ol>
+   <br>
+   <br>
+   <hr>
+   <br>
+   <br>
