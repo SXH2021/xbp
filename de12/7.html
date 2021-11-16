@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <title>デザイン演習第7回：データ分析</title>
+</head>
+<h1>デザイン演習第7回：データ分析</h1>
+<br>
+<br>
+<h3>「神奈川大学」周りの部屋を探したいと設定された。</h3>
+<img src="images/路線と家賃.png"width="80%" />
+<code>
+    <ol style="list-style:decimal-leading-zero outside;in-left:0;padding-left:36px;margin:0;background-color:#EEF;color:#000;">
+    <li style="background-color:#EFF;">df_data.groupby("路線").mean().loc[:,"合計時間"].sort_values().plot.bar()</li>
+    <li style="background-color:#EEF;">plt.subplots_adjust(bottom=0.3)</li>
+    <li style="background-color:#EFF;">plt.show()</li>
+    </ol></code>
+<h3>まずは全体的な路線と家賃の関係を分析すると、「みなとみらい線」が最も高いことが分かります。</h3>
+<h3>なので、みなとみらい線を除きます。残った路線から選択したいと思います。</h3>
+<img src="images/map.jpg"width="60%" />
+<h3>神奈川大学へ徒歩で20分ぐらいの部屋を探したいので、グーグルマップを通して、「桜木町」「高島駅」「新高島駅」の三つの駅を選びました。</h3>
+<h3>そして、道用先生のコードを参考し、家賃・徒歩時間・駅から絞り込むことができる検索エンジンを作りました。</h3>
+<li style="background-color:#EEF;">import pandas as pd  # データ分析に用いるライブラリ</li>
+<li style="background-color:#EFF;">import matplotlib.pyplot as plt  # グラフ表示に用いるライブラリ</li>
+<li style="background-color:#EEF;">pd.set_option('display.unicode.east_asian_width', True)  # 表示のずれを少し緩和</li>
+<li style="background-color:#EFF;">plt.rcParams['font.family'] = 'IPAexGothic'  # グラフ表示におけるフォントの指定</li>
+<li style="background-color:#EEF;"></li>
+<li style="background-color:#EFF;">data_path = "./data.csv"</li>
+<li style="background-color:#EEF;">df_data = pd.read_csv(data_path,  encoding="utf-8-sig")</li>
+<li style="background-color:#EFF;"></li>
+<li style="background-color:#EEF;"># ------------------------------------------------------</li>
+<li style="background-color:#EFF;"># 希望家賃(万)</li>
+<li style="background-color:#EEF;">rent_upper = int(input("希望家賃の上限は？(万円)"))</li>
+<li style="background-color:#EFF;">rent_lower = int(input("希望家賃の下限は？(万円)"))</li>
+<li style="background-color:#EEF;"># 家賃で絞り込む</li>
+<li style="background-color:#EFF;">mask = (df_data['家賃'] &lt;= rent_upper) &amp; (df_data['家賃'] &gt;= rent_lower)</li>
+<li style="background-color:#EEF;"># 絞った内容ををfilter_dfに入れる</li>
+<li style="background-color:#EFF;">filter_df = df_data[mask]</li>
+<li style="background-color:#EEF;">print("家賃で絞り込んだ結果", len(filter_df), "件")</li>
+<li style="background-color:#EFF;"></li>
+<li style="background-color:#EEF;"># # 通学時間（分）</li>
+<li style="background-color:#EFF;">commuting_time = float(input("希望徒歩通学時間上限は?(分)"))</li>
+<li style="background-color:#EEF;">mask = (filter_df['徒歩'] &lt;= commuting_time)</li>
+<li style="background-color:#EFF;"># filter_dfをさらに合計時間で絞り込む(filter_dfを上書き)</li>
+<li style="background-color:#EEF;">filter_df = filter_df[mask]</li>
+<li style="background-color:#EFF;">print("家賃,通学時間で絞り込んだ結果", len(filter_df), "件")</li>
+<li style="background-color:#EEF;"></li>
+<li style="background-color:#EFF;">print("おすすめ駅(10駅)物件数", len(filter_df))</li>
+<li style="background-color:#EEF;">station = input('駅名を入力してください')</li>
+<li style="background-color:#EFF;"># おすすめ駅Top10（filter_top10_station_df）から駅名で更に絞り込みfilter_selected_station_dfに入れる</li>
+<li style="background-color:#EEF;">mask = (df_data['駅'] == station)</li>
+<li style="background-color:#EFF;">filter_df = filter_df[mask]</li>
+<li style="background-color:#EEF;">print(station + "の合致物件数", len(filter_df), "件")</li>
+<li style="background-color:#EFF;"># 全件表示させるようにする</li>
+<li style="background-color:#EEF;">pd.set_option('display.max_rows', None)</li>
+<li style="background-color:#EFF;">pd.set_option('display.max_columns', None)</li>
+<li style="background-color:#EEF;"># 選択した駅の駅、路線、家賃、名称、合計時間、URLを表示する</li>
+<li style="background-color:#EFF;">print(filter_df[["駅", "路線","家賃", "名称", "徒歩", "URL"]].sort_values("家賃").to_string(index=False))</li>
+<li style="background-color:#EEF;">print("----------------------------------------------------------------")</li>
+</ol></code>
+<img src="images/sakura.jpg"/>
+<h3>
+    このように条件を満たす部屋が発見できると思います。（なんかエラーが出てきますが、結果としては問題なさそうです…）</h3>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+
+
+
+
+
+<ol><h3>ホームページに戻る:</h3>
+    <li><a href="index.html" target="_bland">デザイン演習Ⅰ・Ⅱトップページ</a></li>
+    <li><a href="../index.html" target="_bland">XBPトップページ</a></li>
+</ol>
