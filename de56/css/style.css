@@ -1,0 +1,54 @@
+@charset "utf-8";
+/* 冒頭でimport */
+@import url('https://fonts.googleapis.com/css?family=Raleway:700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c:400,700&display=swap&subset=japanese');
+/* フォントを指定したいところで */
+
+logo img{
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover; /* 画像のトリミング */
+}
+
+logotohome img{
+    border-radius: 70%;
+    width: 70px;
+    height: 70px;
+    object-fit: cover; /* 画像のトリミング */
+}
+
+
+
+/* ========== common ========== */
+html, body {
+	font-size: 16px;
+	font-family: sans-serif;
+	color: #393939;
+    margin-left: 15px;
+    margin-bottom: 40px;
+	background: #efefef;
+}
+h1{
+    text-indent: 0em;
+}
+h2{
+    margin-left: 1em;
+    margin-top: 1em;
+}
+h3{
+    margin-left: 2em;
+}
+div{
+    margin-top: 1em;
+    margin-left: 3em;
+}
+p{
+    margin-left: 3em;
+}
+span.blackback{
+    text-indent: 3em;
+    background: #393939;
+    color: #efefef;
+}
+
