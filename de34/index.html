@@ -95,9 +95,7 @@
                 <div class="col-lg-6 m-auto">
                     <div class="sec-title-text wow fadeup-animation" data-wow-duration="1s" data-wow-delay="0.2s">
                         <h2 class="h2-title title-ani">第一回</h2>
-                        <p>	マイコンボードの基礎<br>
-                            光を操る<br>
-                            動きを操る</p>
+                        <p>	マイコンボードの基礎</p>
                     </div>
                 </div>
             </div>
@@ -167,61 +165,127 @@
     </section>
     <!-- End Of About Us-->
 
-    <!-- Start of Process Sec-->
-    <section class="process-sec light-bg section" id="process">
-        <div class="sec-wp">
-            <div class="container">
-                <div class="row mb-5">
-                    <div class="col-lg-6 m-auto">
-                        <div class="sec-title-text wow fadeup-animation" data-wow-duration="1s" data-wow-delay="0.2s">
-                            <h2 class="h2-title title-ani">第二回</h2>
-                            <p>It is a dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+    <!-- Start of About Us-->
+    <section class="about-us section" id="process">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-lg-6 m-auto">
+                    <div class="sec-title-text wow fadeup-animation" data-wow-duration="1s" data-wow-delay="0.2s">
+                        <h2 class="h2-title title-ani">第二回</h2>
+                        <p>光を操る</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="about-left-part wow left-animation" data-wow-duration="1s" data-wow-delay="0.2s">
+                        <div class="hidden-box">
+                            <div class="ani-img-wrapper">
+                                <div class="about-img ani-image" style="background-image: url('static/picture/IMG_9948.JPG');">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="row">
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="process-box wow fadeup-animation" data-wow-duration="1s" data-wow-delay="0.2s">
-                            <div class="process-title">
-                                <img width="23" height="36" src="static/picture/concept.svg" alt="concept">
-                                <h4 class="h4-title">01. Creating A Concept</h4>
-                            </div>
-                            <p>It is a dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="process-box wow fadeup-animation" data-wow-duration="1s" data-wow-delay="0.3s">
-                            <div class="process-title">
-                                <img width="36" height="36" src="static/picture/development.svg" alt="development">
-                                <h4 class="h4-title">02. Development</h4>
-                            </div>
-                            <p>It is a dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="process-box wow fadeup-animation" data-wow-duration="1s" data-wow-delay="0.4s">
-                            <div class="process-title">
-                                <img width="36" height="36" src="static/picture/production.svg" alt="Production">
-                                <h4 class="h4-title">03. Production</h4>
-                            </div>
-                            <p>It is a dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-sm-6">
-                        <div class="process-box wow fadeup-animation" data-wow-duration="1s" data-wow-delay="0.5s">
-                            <div class="process-title">
-                                <img width="36" height="36" src="static/picture/installation.svg" alt="Installation">
-                                <h4 class="h4-title">04. Installation</h4>
-                            </div>
-                            <p>It is a dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna.</p>
+                <div class="col-lg-6">
+                    <div class="about-right-part wow right-animation" data-wow-duration="1s" data-wow-delay="0.3s">
+                        <div class="about-text">
+                            <p>
+                                
+ <pre>
+ 　 ➀ランダムに光る
+  　#include <Adafruit_NeoPixel.h>
+    #define PIN        9 // 信号用のピンを指定
+    #define NUMPIXELS 5 // LEDの数を指定
+    int brightness=50;//明るさ
+    
+    Adafruit_NeoPixel pixels(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
+    
+    void setup() {
+      pixels.begin(); // NeoPixel出力ピンの初期化
+      pixels.setBrightness(brightness);
+    }
+    
+    void loop() {
+      pixels.clear(); // すべてのLEDの色を0にセット
+    
+      for(int i=0; i＜NUMPIXELS; i++) {
+        int r=random(0,255);
+        int g=random(0,255);
+        int b=random(0,255);
+        pixels.setPixelColor(i, pixels.Color(r,g,b));
+        pixels.show();
+        delay(1000);
+      }
+    }
+    
+    
+<pre>
+    　➁五つの色で順番に光る
+    
+    　　#include <Adafruit_NeoPixel.h>
+        #define PIN        9 // 信号用のピンを指定
+        #define NUMPIXELS 5 // LEDの数を指定
+        int brightness=50;//明るさ
+        
+        Adafruit_NeoPixel pixels(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
+        
+        void setup() {
+          pixels.begin(); // NeoPixel出力ピンの初期化
+          pixels.setBrightness(brightness);
+        }
+        void loop() {
+          pixels.clear(); // すべてのLEDの色を0にセット
+        
+           for (int i=0; i < 5; i++){
+            pixels.setPixelColor(i, pixels.Color(255,0,0));
+            pixels.show();
+            delay(50);
+          }
+        
+            for (int i=0; i < 5; i++){
+            pixels.setPixelColor(i, pixels.Color(255,255,0));
+            pixels.show();
+            delay(50);
+          }
+        
+            for (int i=0; i < 5; i++){
+            pixels.setPixelColor(i, pixels.Color(0,0,255));
+            pixels.show();
+            delay(50);
+          }
+        
+            for (int i=0; i < 5; i++){
+            pixels.setPixelColor(i, pixels.Color(0,255,255));
+            pixels.show();
+            delay(50);
+          }
+        
+            for (int i=0; i < 5; i++){
+            pixels.setPixelColor(i, pixels.Color(255,0,255));
+            pixels.show();
+            delay(50);
+          }
+        }
+    
+    ➂グループワーク：pov
+    私たちは（良い天気が好きな人）に出会った；
+    私たちは（天気は癒し効果があるということ）に驚いた；
+    この洞察は私たちに（どうすれば天気がコントロールできるか）という本当の問題を気づかせてくれた；
+    その人は（良い天気を感じる）を必要としている；
+</pre>
+
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- End Of Process Sec -->
+    <!-- End Of About Us-->
+
 
     <!-- Start of Cta Sec-->
     <section class="cta-sec section" style="background-image: url('static/image/cta-bg.jpg');">
@@ -231,9 +295,9 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="cta-text text-center wow fadeup-animation" data-wow-duration="1s" data-wow-delay="0.3s">
-                            <h2 class="cta-title">Become a part of DeCore bussiness community today</h2>
-                            <p class="cta-text-inner m-auto mt-4 mb-4">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-                            <a href="javascript:void(0)" title="Contact Us" class="sec-btn">Contact Us</a>
+                            <h2 class="cta-title">デザイン演習ⅲ・ソン</h2>
+                            <p class="cta-text-inner m-auto mt-4 mb-4">神奈川大学・経営学部</p>
+                            <a href="https://sxh2021.github.io/xbp/" title="Contact Us" class="sec-btn">デザイン演習ホームページ</a>
                         </div>
                     </div>
                 </div>
@@ -242,83 +306,140 @@
     </section>
     <!-- End of Cta Sec -->
 
-    <!-- Start of Services Sec-->
-    <section class="services-sec section" id="services">
-        <div class="container">
-            <div class="row mb-5">
-                <div class="col-lg-6 m-auto">
-                    <div class="sec-title-text wow fadeup-animation" data-wow-duration="1s" data-wow-delay="0.2s">
-                        <h2 class="h2-title title-ani">what can we offer</h2>
-                        <p>It is a dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+   <!-- Start of About Us-->
+   <section class="about-us section" id="services">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-lg-6 m-auto">
+                <div class="sec-title-text wow fadeup-animation" data-wow-duration="1s" data-wow-delay="0.2s">
+                    <h2 class="h2-title title-ani">第三回</h2>
+                    <p>動きを操る</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="about-left-part wow left-animation" data-wow-duration="1s" data-wow-delay="0.2s">
+                    <div class="hidden-box">
+                        <div class="ani-img-wrapper">
+                            <div class="about-img ani-image" style="background-image: url('static/image/IMG_9997.JPG');">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="services-box wow fadeup-animation" data-wow-duration="1s" data-wow-delay="0.3s">
-                        <div class="services-icon">
-                            <img width="66" height="66" src="static/picture/design.svg" alt="Design">
-                        </div>
-                        <h3 class="h3-title">Design & Planning</h3>
-                        <p>It is a dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+            <div class="col-lg-6">
+                <div class="about-right-part wow right-animation" data-wow-duration="1s" data-wow-delay="0.3s">
+                    <div class="about-text">
+                        <p>
+                            
+<pre>
+　 ➀回るモーター
 
-                        <a href="javascript:void(0)" class="read-more"><span>Read More</span>
-                            <svg data-name="Group 90" xmlns="http://www.w3.org/2000/svg" width="20" height="18.572" viewbox="0 0 20 18.572">
-                                <g data-name="Group 88" transform="translate(0 0)">
-                                    <path data-name="Path 90" d="M2.7,13H21.3a.7.7,0,0,0,.649-.441.724.724,0,0,0-.152-.779L13.374,3.209a.692.692,0,0,0-.992,0,.723.723,0,0,0,0,1.01L19.6,11.571H2.7A.714.714,0,0,0,2.7,13Z" transform="translate(-2 -3)" fill="var(--primary-color)"></path>
-                                </g>
-                                <g data-name="Group 89" transform="translate(10.176 11.429)">
-                                    <path data-name="Path 91" d="M16.947,26.143a.7.7,0,0,0,.5-.209l5.614-5.714a.723.723,0,0,0,0-1.01.692.692,0,0,0-.992,0l-5.614,5.714a.723.723,0,0,0,0,1.01A.693.693,0,0,0,16.947,26.143Z" transform="translate(-16.246 -19)" fill="var(--primary-color)"></path>
-                                </g>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="services-box wow fadeup-animation" data-wow-duration="1s" data-wow-delay="0.4s">
-                        <div class="services-icon">
-                            <img width="55" height="67" src="static/picture/solutions.svg" alt="Solutions">
-                        </div>
-                        <h3 class="h3-title">Design & Planning</h3>
-                        <p>It is a dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+ソフト：Arduino
+マイコンボード：Arduino UNO
 
-                        <a href="javascript:void(0)" class="read-more"><span>Read More</span>
-                            <svg data-name="Group 90" xmlns="http://www.w3.org/2000/svg" width="20" height="18.572" viewbox="0 0 20 18.572">
-                                <g data-name="Group 88" transform="translate(0 0)">
-                                    <path data-name="Path 90" d="M2.7,13H21.3a.7.7,0,0,0,.649-.441.724.724,0,0,0-.152-.779L13.374,3.209a.692.692,0,0,0-.992,0,.723.723,0,0,0,0,1.01L19.6,11.571H2.7A.714.714,0,0,0,2.7,13Z" transform="translate(-2 -3)" fill="var(--primary-color)"></path>
-                                </g>
-                                <g data-name="Group 89" transform="translate(10.176 11.429)">
-                                    <path data-name="Path 91" d="M16.947,26.143a.7.7,0,0,0,.5-.209l5.614-5.714a.723.723,0,0,0,0-1.01.692.692,0,0,0-.992,0l-5.614,5.714a.723.723,0,0,0,0,1.01A.693.693,0,0,0,16.947,26.143Z" transform="translate(-16.246 -19)" fill="var(--primary-color)"></path>
-                                </g>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="services-box wow fadeup-animation" data-wow-duration="1s" data-wow-delay="0.5s">
-                        <div class="services-icon">
-                            <img width="85" height="67" src="static/picture/furniture.svg" alt="Furniture">
-                        </div>
-                        <h3 class="h3-title">Furniture & Decor</h3>
-                        <p>It is a dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+const int DIR  = 8;
+const int STEP = 9;
 
-                        <a href="javascript:void(0)" class="read-more"><span>Read More</span>
-                            <svg data-name="Group 90" xmlns="http://www.w3.org/2000/svg" width="20" height="18.572" viewbox="0 0 20 18.572">
-                                <g data-name="Group 88" transform="translate(0 0)">
-                                    <path data-name="Path 90" d="M2.7,13H21.3a.7.7,0,0,0,.649-.441.724.724,0,0,0-.152-.779L13.374,3.209a.692.692,0,0,0-.992,0,.723.723,0,0,0,0,1.01L19.6,11.571H2.7A.714.714,0,0,0,2.7,13Z" transform="translate(-2 -3)" fill="var(--primary-color)"></path>
-                                </g>
-                                <g data-name="Group 89" transform="translate(10.176 11.429)">
-                                    <path data-name="Path 91" d="M16.947,26.143a.7.7,0,0,0,.5-.209l5.614-5.714a.723.723,0,0,0,0-1.01.692.692,0,0,0-.992,0l-5.614,5.714a.723.723,0,0,0,0,1.01A.693.693,0,0,0,16.947,26.143Z" transform="translate(-16.246 -19)" fill="var(--primary-color)"></path>
-                                </g>
-                            </svg>
-                        </a>
+void setup() {
+  pinMode(DIR, OUTPUT);
+  pinMode(STEP, OUTPUT);
+  digitalWrite(DIR, LOW);
+  digitalWrite(STEP, LOW);
+}
+
+void loop() {
+
+  for (int i=0; i <= 50; i++){
+    clockwise(5000);
+  }
+  for (int i=0; i <= 50; i++){
+    counter_clockwise(5000);
+  }
+}
+
+void clockwise(int delaytime){
+  digitalWrite(DIR, HIGH);//HIGHは時計回り
+
+  digitalWrite(STEP, HIGH);
+  delayMicroseconds(delaytime);
+  digitalWrite(STEP, LOW);
+  delayMicroseconds(delaytime);
+
+}
+
+void counter_clockwise(int delaytime){
+
+  digitalWrite(DIR, LOW);//はLOWは反時計回り
+  digitalWrite(STEP, HIGH);
+  delayMicroseconds(delaytime);
+  digitalWrite(STEP, LOW);
+  delayMicroseconds(delaytime);
+}
+
+<pre>
+　➁暗くなると反時計回りのモーター
+
+const int DIR  = 8;
+const int STEP = 9;
+
+void setup() {
+  pinMode(DIR, OUTPUT);
+  pinMode(STEP, OUTPUT);
+  digitalWrite(DIR, LOW);
+  digitalWrite(STEP, LOW);
+  pinMode(13,OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+
+  int val=0;
+  val=analogRead(1);
+  Serial.println(val);
+  if(val＜200) {
+     for (int i=0; i <= 50; i++){
+      clockwise(5000);
+    }
+  }else{
+    for (int i=0; i <= 50; i++){
+    counter_clockwise(5000);
+  }
+ }
+}
+
+void clockwise(int delaytime){
+  digitalWrite(DIR, HIGH);//HIGHは時計回り
+
+  digitalWrite(STEP, HIGH);
+  delayMicroseconds(delaytime);
+  digitalWrite(STEP, LOW);
+  delayMicroseconds(delaytime);
+
+}
+
+void counter_clockwise(int delaytime){
+
+  digitalWrite(DIR, LOW);//はLOWは反時計回り
+  digitalWrite(STEP, HIGH);
+  delayMicroseconds(delaytime);
+  digitalWrite(STEP, LOW);
+  delayMicroseconds(delaytime);
+}
+
+</pre>
+
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    <!-- End Of Services Sec -->
+    </div>
+</section>
+<!-- End Of About Us-->
 
     <!-- Start of Project Sec-->
     <section class="project-sec light-bg section" id="projects">
