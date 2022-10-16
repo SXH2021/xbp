@@ -1,0 +1,495 @@
+﻿@charset "UTF-8";
+@import url("html5reset-1.6.1.css");
+@import url('https://fonts.googleapis.com/css?family=Parisienne');
+
+/* ↓レイアウト↓ */
+
+*{
+    line-height:150%;
+}
+
+body{
+    color:#555;
+    background-color:#e9eef2;
+    font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Verdana, sans-serif;
+}
+
+.base{
+    margin:0 auto;
+    max-width:900px;
+}
+
+.header{
+    padding:10px;
+    margin:-100px 0px 50px 0px;
+    text-align:center;
+}
+
+.head{
+    margin:-30px -30px 0px 0px;
+}
+
+.footer{
+    padding:10px;
+    text-align:center;
+    margin:0px 0px -120px 0px;
+}
+
+.foot{
+    margin:0px 0px -30px -30px;
+}
+
+.work{
+    padding:10px;
+    max-width:650px;
+    margin:0 auto;
+}
+
+.menu{
+    margin:20px 10px;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-around;
+    font-family: 'Parisienne', cursive;
+}
+
+.gallery{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-around;
+}
+
+.colum{
+    display:flex;
+    flex-wrap:nowrap;
+    justify-content:center;
+    margin:15px 0px;
+}
+
+.box{
+    margin:30px 30px;
+    border-width:1px;
+    border-style:solid;
+    box-shadow:0px 0px 0px 5px #fff,0px 0px 0px 6px #555;
+    background-color:#fff;
+}
+
+.text{
+    margin:5px 0px;
+    padding:15px;
+    line-height:180%;
+    font-size:90%;
+}
+
+img
+{
+	max-width:90% ;
+	height:auto ;
+}
+
+
+/* ↓タグ↓ */
+
+h1{
+    font-size:160%;
+    font-weight:normal;
+    font-family: 'Parisienne', cursive;
+}
+
+h1:first-letter{
+    font-size:180%;
+}
+
+h2{
+    font-size:70%;
+    font-weight:normal;
+    margin:20px 10px;
+}
+
+h3{
+    font-size:130%;
+    font-weight:normal;
+    text-align:center;
+    margin:20px 0px;
+    font-family: 'Parisienne', cursive;
+}
+
+h3:first-letter{
+    font-size:160%;
+}
+
+h4{
+    font-size:100%;
+    font-weight:normal;
+    margin:10px 0px;
+}
+
+h4:before{
+    content:'✤';
+    color:#ccc;
+    font-size:20px;
+    margin:0px 5px 0px -5px;
+}
+
+h5{
+    font-size:90%;
+    font-weight:normal;
+    margin:10px 0px;
+    background-color:#fafdff;
+    padding:5px;
+}
+
+h6{
+    font-size:80%;
+    font-weight:normal;
+    margin:10px 0px;
+    color:#7b6043;
+}
+
+p{
+    text-align:left;
+    padding:5px 0px;
+}
+
+em{
+    background: linear-gradient(transparent 60%, #fff799 60%);
+    font-style:normal;
+}
+
+strong{
+    font-weight:normal;
+    border-width:1px 0px;
+    border-style:solid;
+    border-color:#06679f;
+}
+
+small{
+    font-size:70%;
+}
+
+big{
+    font-size:130%;
+}
+
+ins{
+    background-color:#ffe4e1;
+}
+
+i{
+    font-style:italic;
+}
+
+a:link{
+    color:#06679F;
+    text-decoration:none;
+}
+
+a:visited{
+    color:#06679F;
+    text-decoration:none;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
+h1 a:link{
+    color:#555;
+}
+
+h1 a:visited{
+    color:#555;
+}
+
+blockquote{
+    position:relative;
+    padding:10px 10px 10px 50px;
+    box-sizing border-box;
+    background:#f5f5f5;
+    border-left:6px double #ccc;
+    box-shadow:1px 1px 3px -1px #888;
+    margin:15px;
+    font-size:90%;
+}
+
+blockquote:before{
+    display:inline-block;
+    position:absolute;
+    top:15px;
+    left:15px;
+    vertical-align: middle;
+    content:'\00275e';
+    color:#ccc;
+    font-size:30px;
+}
+
+li{
+    padding:5px;
+    margin:0px 0px 0px 20px;
+}
+
+ul{
+    margin:10px 0px;
+}
+
+ol{
+    margin:10px 0px;
+}
+
+dl{
+    padding-left:3px;
+    margin:10px 0px;
+}
+
+dt{
+    padding-left:5px;
+}
+
+dd{
+    padding-left:10px;
+}
+
+address{
+    font-size:80%;
+    font-family: 'Parisienne', cursive;
+}
+
+cite{
+    font-size:smaller;
+}
+
+
+/* ↓classタグ↓ */
+
+.item{
+    text-align:center;
+    margin:5px;
+    padding:5px;
+    font-size:110%;
+}
+
+.item2{
+    margin:5px;
+    padding:5px;
+    font-size:70%;
+    text-align:center;
+    width:43%;
+    background-color:#f4f0eb;
+    box-shadow:1px 1px 3px -1px #888;
+}
+
+.item3-1{
+    background-color:#06679F;
+    padding:5px;
+    font-size:90%;
+    text-align:center;
+    width:70%;
+    color:#fff;
+}
+
+.item3-2{
+    padding:5px;
+    font-size:70%;
+    text-align:left;
+    width:130%;
+    border-width:1px;
+    border-style:solid;
+    border-color:#ccc;
+}
+
+.list1{
+    list-style-type:circle;
+}
+
+.list2{
+    list-style-type:upper-roman;
+}
+
+.hr1{
+    margin:5px 0px;
+    border-top: 1px #ccc;
+    border-bottom: 1px #fff;
+    border-style:solid;
+}
+
+.hr2{
+    margin:5px 0px;
+    border-top: 1px #aaa;
+    border-style:dashed;
+}
+
+.hr3{
+    margin:5px 0px;
+    height:50px;
+    border-width:0px;
+}
+
+.p1{
+    padding:5px;
+    margin:5px 0px;
+    font-size:90%;
+    background-color:#f9f9f9;
+}
+
+.p2{
+    border-style:double;
+    border-width:3px;
+    border-color:#ccc;
+    padding:3px;
+    margin:5px 0px;
+    font-size:90%;
+}
+
+.p3{
+    border-style:dashed;
+    border-width:1px;
+    border-color:#ccc;
+    padding:5px;
+    margin:5px 0px;
+    font-size:90%;
+}
+
+.dl1{
+}
+
+.dt1{
+    font-family: 'Parisienne', cursive;
+    font-size:100%;
+}
+
+.dt1span{
+    background: linear-gradient(transparent 80%, #f4f0eb 80%);
+    font-size:100%;
+    padding:1px 5px;
+}
+
+.dd1{
+    font-size:90%;
+    border-style:dashed;
+    border-width:0px 0px 1px 0px;
+    margin:5px;
+    border-color:#ccc;
+}
+
+.memo{
+    background-color:#fff;
+    font-size:80%;
+    padding:0px 10px;
+    height:150px;
+    overflow:auto;
+    margin:5px 10px;
+    box-shadow:1px 1px 3px -1px #888;
+}
+
+.img1{
+    box-shadow:1px 1px 3px -1px #888;
+}
+
+.counter{
+    font-family: 'Parisienne', cursive;
+}
+
+.pagetop{
+    position: fixed;
+    bottom: 10px;
+    right: 14px;
+}
+ 
+.pagetop a{
+    display: block;
+    text-decoration: none;
+}
+ 
+.pagetop:hover{
+    opacity: 0.7 ;
+}
+
+
+/*↓ディスプレイ480px以下用↓*/
+
+@media screen and (max-width:480px) 
+
+{
+    
+.base{
+    width:auto;
+    margin:0px 5px;
+}
+
+.box{
+    margin:30px 10px;
+}
+
+.work{
+    width:auto;
+    margin:0px;
+    padding:10px;
+}
+
+.text{
+    width:auto;
+    margin:0px;
+    padding:10px;
+}
+
+.menu{
+    flex-direction:column;
+    width:auto;
+    margin:-30px 0px;
+    font-size:90%;
+}
+
+.gallery{
+    flex-direction:column;
+    width:auto;
+    margin:0px;
+}
+
+.colum{
+    flex-direction:column;
+    width:auto;
+    margin:10px 0px;
+}
+
+.item2{
+    width:95%;
+}
+
+.item3-1{
+    width:95%;
+    padding:6px;
+}
+
+.item3-2{
+    width:95%;
+}
+
+.item a{
+    display:block;
+}
+
+.item a:hover{
+    background-color:#f4f0eb;
+}
+
+h1{
+    font-size:120%;
+}
+
+.header{
+    margin:-60px 0px 50px 0px;
+}
+
+.head{
+    margin:-30px -20px 0px 0px;
+}
+
+.footer{
+    margin:0px 0px -70px 0px;
+}
+
+.foot{
+    margin:0px 0px -30px -20px;
+}
+
+}
