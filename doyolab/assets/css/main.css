@@ -1985,7 +1985,7 @@ input, select, textarea {
 	}
 
 		.item header {
-			background: #fff;
+			: #fff;
 			margin: 0;
 			padding: 1em 0 1em 0;
 			font-size: 0.8em;
@@ -2248,8 +2248,11 @@ input, select, textarea {
 
 			#main > section.one {
 				background-color: #81918E;
-				background-image: url("../../images/banner.jpg");
-			}
+				background-image: url("../../images/2.png");
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center center;
+			  }
 
 			#main > section.two {
 				background-color: #f5fafa;
